@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Azərbaycan Hücumu — Pulsuz 3D taktiki atıcı oyun</title>
+<meta name="description" content="Azərbaycan Hücumu: Azərbaycan dilində pulsuz 3D taktiki atıcı oyun. Brauzerdə, telefonda və kompüterdə qeydiyyatsız oyna. Yaradıcı: Harun.">
+<meta name="theme-color" content="#07090b">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Azərbaycan Hücumu — pulsuz 3D atıcı oyun">
+<meta property="og:description" content="Rejimlər, skinlər, personajlar, dost botlar və daha çoxu. Qeydiyyatsız, brauzerdə oyna.">
+<meta property="og:image" content="og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<style>
+  :root{--bg:#07090b;--panel:#0f1216;--panel2:#161a1f;--line:#232a31;--blue:#00b9e4;--red:#ef3340;--green:#009639;--text:#eef3f5;--dim:#8b97a0;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--text);font-family:'Segoe UI',Arial,sans-serif;line-height:1.6;overflow-x:hidden}
+  .flag{height:6px;background:linear-gradient(90deg,var(--blue) 0 33%,var(--red) 33% 66%,var(--green) 66% 100%)}
+  nav{display:flex;justify-content:space-between;align-items:center;padding:14px 5vw;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(7,9,11,.92);backdrop-filter:blur(6px);z-index:10}
+  nav b{letter-spacing:2px;font-size:14px}
+  nav a{color:var(--dim);text-decoration:none;font-size:13px;margin-left:18px}
+  nav a:hover{color:#fff}
+  .hero{position:relative;text-align:center;padding:14vh 5vw 11vh;background:radial-gradient(ellipse at 25% 10%,rgba(0,185,228,.16),transparent 55%),radial-gradient(ellipse at 80% 90%,rgba(239,51,64,.14),transparent 50%)}
+  .hero .moon{font-size:42px;color:var(--green);animation:glow 2.8s ease-in-out infinite}
+  @keyframes glow{0%,100%{text-shadow:0 0 8px rgba(0,150,57,.4)}50%{text-shadow:0 0 28px rgba(0,150,57,.95)}}
+  h1{font-size:clamp(34px,8vw,84px);font-weight:900;line-height:1.05;margin:8px 0 14px;background:linear-gradient(180deg,#fff,var(--blue));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .tag{color:var(--dim);font-size:clamp(14px,2.4vw,20px);max-width:720px;margin:0 auto 34px}
+  .cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .btn{display:inline-block;padding:15px 30px;border:1px solid var(--line);border-radius:3px;background:var(--panel2);color:var(--text);text-decoration:none;font-weight:700;letter-spacing:.5px;cursor:pointer;font-size:15px;transition:.15s}
+  .btn:hover{border-color:var(--blue);background:#122127}
+  .btn.primary{background:linear-gradient(180deg,#14c9f2,#0a7691);border-color:var(--blue);color:#02181d;font-size:18px;padding:17px 44px}
+  .btn.primary:hover{filter:brightness(1.12)}
+  .chips{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:26px;color:var(--dim);font-size:13px}
+  .chips span{border:1px solid var(--line);padding:5px 12px;border-radius:20px;background:var(--panel)}
+  section{padding:9vh 5vw;max-width:1100px;margin:0 auto}
+  h2{font-size:12px;letter-spacing:4px;color:var(--blue);margin-bottom:8px}
+  h3.big{font-size:clamp(22px,4vw,34px);margin-bottom:26px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:20px}
+  .card .ic{font-size:30px;margin-bottom:8px}
+  .card h4{margin-bottom:6px}
+  .card p{color:var(--dim);font-size:14px}
+  table{width:100%;border-collapse:collapse;font-size:14px}
+  td,th{border-bottom:1px solid var(--line);padding:9px 8px;text-align:left}
+  th{color:var(--dim);font-weight:600;font-size:12px;letter-spacing:1px}
+  kbd{background:var(--panel2);border:1px solid var(--line);padding:1px 7px;border-radius:3px;font-size:12px}
+  .two{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}
+  .credit{background:linear-gradient(135deg,rgba(0,185,228,.10),rgba(239,51,64,.08) 55%,rgba(0,150,57,.10));border:1px solid var(--line);border-radius:4px;padding:30px;text-align:center}
+  .credit p{font-size:clamp(16px,2.6vw,22px);font-style:italic;max-width:760px;margin:0 auto 14px}
+  footer{border-top:1px solid var(--line);padding:30px 5vw;text-align:center;color:var(--dim);font-size:13px}
+  footer a{color:var(--blue)}
+  #installBtn{display:none}
+  .note{color:var(--dim);font-size:13px;margin-top:12px}
+</style>
+</head>
+<body>
+<div class="flag"></div>
+<nav><b>AZƏRBAYCAN HÜCUMU</b><div><a href="#xususiyyetler">Xüsusiyyətlər</a><a href="#idareetme">İdarəetmə</a><a href="#haqqinda">Haqqında</a></div></nav>
+
+<header class="hero">
+  <div class="moon">☪</div>
+  <h1>AZƏRBAYCAN HÜCUMU</h1>
+  <p class="tag">Azərbaycan dilində pulsuz 3D taktiki atıcı oyun. Qeydiyyat yoxdur, yükləmə yoxdur — brauzerdə, telefonda və kompüterdə dərhal oyna.</p>
+  <div class="cta">
+    <a class="btn primary" href="game.html">▶ İNDİ OYNA</a>
+    <button class="btn" id="installBtn">⬇ Tətbiq kimi yüklə</button>
+    <button class="btn" id="shareBtn">🔗 Dostlarla paylaş</button>
+  </div>
+  <div class="chips"><span>🆓 Pulsuz</span><span>📱 Telefon + PC</span><span>🇦🇿 Azərbaycan dili</span><span>🎮 Gamepad dəstəyi</span></div>
+</header>
+
+<section id="xususiyyetler">
+  <h2>XÜSUSİYYƏTLƏR</h2><h3 class="big">Bir oyunda çox şey</h3>
+  <div class="grid">
+    <div class="card"><div class="ic">⚔️</div><h4>6 oyun rejimi</h4><p>Klassik raundlar, 1v1 duel, deathmatch, bomba imhası, bıçaq döyüşü və aim məşqi. Hər birində 3 çətinlik səviyyəsi.</p></div>
+    <div class="card"><div class="ic">🗺️</div><h4>2 xəritə</h4><p>Səhra qalası və dar küçələri olan İçərişəhər ruhlu xəritə. Gün batımı və ya gecə rejimi (fənərlə).</p></div>
+    <div class="card"><div class="ic">🔫</div><h4>Silahlar və qumbaralar</h4><p>Pistolet, AK-47, SMG, pompalı, snayper (durbinli), bıçaq; partlayıcı, flaş və tüstü qumbaraları.</p></div>
+    <div class="card"><div class="ic">🎨</div><h4>60-dan çox skin</h4><p>Hər silah üçün skinlər, sandıq açma animasiyası, 3D önbaxışlı envanter və milli rəngli dəstlər.</p></div>
+    <div class="card"><div class="ic">🪖</div><h4>8 personaj</h4><p>Azərbaycan və düşmən tərəfi üçün orijinal 3D personajlar. Tərəfini sən seçirsən.</p></div>
+    <div class="card"><div class="ic">🤝</div><h4>Dost botlar</h4><p>Yanında döyüşən 1–3 dost bot. Düşmən botlar sığınır, snayperlər uzaqdan atır, tələsənlər üstünə qaçır.</p></div>
+    <div class="card"><div class="ic">🏅</div><h4>Rütbə və nailiyyətlər</h4><p>XP ilə Əsgərdən Əfsanəyə qədər 11 rütbə, günlük tapşırıqlar, giriş bonusu və nailiyyətlər.</p></div>
+    <div class="card"><div class="ic">🏆</div><h4>Battle Pass</h4><p>28 günlük mövsümlər, 30 səviyyə, pulsuz skin və kosmetik mükafatlar. XP-ni tapşırıq və matçlardan qazan.</p></div>
+    <div class="card"><div class="ic">👥</div><h4>Dostlar, klan və izləmə</h4><p>Dost əlavə et, lobby-yə dəvət et, klan qur və reytinqdə yüksəl. İcazə verilən matçları xəritədə canlı izlə.</p></div>
+    <div class="card"><div class="ic">💬</div><h4>Global chat və reytinq</h4><p>Lobbidə bütün oyunçularla canlı yazış (spam filtri, şikayət, susdurma) və oyunu 1–5 ulduzla qiymətləndir.</p></div>
+    <div class="card"><div class="ic">👤</div><h4>Profil</h4><p>Öz adın, ölkə bayrağın və qısa havalı ünvanın. Profil kartını şəkil kimi paylaş.</p></div>
+  </div>
+</section>
+
+<section id="idareetme">
+  <h2>İDARƏETMƏ</h2><h3 class="big">Necə oynanır</h3>
+  <div class="two">
+    <div class="card"><h4>💻 Kompüter</h4>
+      <table>
+        <tr><td><kbd>W A S D</kbd></td><td>Hərəkət</td></tr>
+        <tr><td><kbd>Boşluq</kbd></td><td>Tullan</td></tr>
+        <tr><td>Siçan / sol klik</td><td>Bax / atəş</td></tr>
+        <tr><td>Sağ klik</td><td>Nişan / durbin (bıçaqla güclü zərbə)</td></tr>
+        <tr><td><kbd>R</kbd> · <kbd>B</kbd> · <kbd>Tab</kbd></td><td>Doldur · Alış-veriş · Skorbord</td></tr>
+        <tr><td><kbd>1</kbd> <kbd>2</kbd> <kbd>3</kbd></td><td>Silah dəyiş</td></tr>
+        <tr><td><kbd>G</kbd> <kbd>H</kbd> <kbd>E</kbd> <kbd>F</kbd> <kbd>L</kbd></td><td>Qumbara · növ · imha · nəzərdən keçir · fənər</td></tr>
+      </table>
+      <p class="note">Düymələri oyunun ayarlarından dəyişə bilərsən.</p>
+    </div>
+    <div class="card"><h4>📱 Telefon</h4>
+      <table>
+        <tr><td>Sol tərəf</td><td>Üzən joystick (hərəkət)</td></tr>
+        <tr><td>Sağ tərəfi sürüşdür</td><td>Ətrafa bax</td></tr>
+        <tr><td>ATƏŞ · TÜLLAN · ZOOM</td><td>Sağdakı düymələr</td></tr>
+        <tr><td>DOLDUR · DƏYİŞ · QUM.</td><td>Silah idarəsi</td></tr>
+      </table>
+      <p class="note">Telefonu üfüqi (yan) tut. Brauzer menyusundan <b>“Ana ekrana əlavə et”</b> seçsən oyun tam ekran tətbiq kimi açılır.</p>
+    </div>
+  </div>
+</section>
+
+<section id="haqqinda">
+  <h2>HAQQINDA</h2>
+  <div class="credit">
+    <p>Bu oyun Azərbaycan üçün, Azərbaycanlı oyunçular üçün ürəklə hazırlanıb — hər raund bir hekayə, hər qələbə vətənə bir töhfədir.</p>
+    <p style="font-style:normal;font-size:16px">Yaradıcı: <b>Harun</b></p>
+    <a class="btn" href="https://www.tiktok.com/@hquer1" target="_blank" rel="noopener noreferrer">🎵 TikTok: @hquer1</a>
+    <p class="note" style="font-style:normal">Qeydiyyat yoxdur. Proqresin (skinlər, rütbə, ayarlar) yalnız sənin brauzerində saxlanılır; heç bir şəxsi məlumat toplanmır. Bu müstəqil, qeyri-kommersiya layihədir və heç bir oyun şirkəti ilə əlaqəli deyil.</p>
+  </div>
+</section>
+
+<footer>© <span id="yr"></span> Azərbaycan Hücumu · Yaradıcı: Harun · <a href="https://www.tiktok.com/@hquer1" target="_blank" rel="noopener noreferrer">@hquer1</a></footer>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+let deferred=null;
+window.addEventListener('beforeinstallprompt',e=>{ e.preventDefault(); deferred=e; document.getElementById('installBtn').style.display='inline-block'; });
+document.getElementById('installBtn').addEventListener('click',async()=>{ if(!deferred) return; deferred.prompt(); await deferred.userChoice; deferred=null; document.getElementById('installBtn').style.display='none'; });
+document.getElementById('shareBtn').addEventListener('click',async()=>{
+  const data={title:'Azərbaycan Hücumu',text:'Pulsuz 3D atıcı oyun — gəl oyna!',url:location.href.split('#')[0]};
+  try{ if(navigator.share){ await navigator.share(data); } else { await navigator.clipboard.writeText(data.url); alert('Link kopyalandı!'); } }catch(e){}
+});
+if('serviceWorker' in navigator && /^https?:/.test(location.protocol)){ navigator.serviceWorker.register('sw.js').catch(()=>{}); }
+</script>
+</body>
+</html>
